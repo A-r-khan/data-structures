@@ -1,11 +1,11 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class MySinglyLinkedList {
     Node head;
     Node tail;
     int size;
-// constructor here!
-    //**********
 
     public MySinglyLinkedList() {
         this.head = null;
@@ -13,19 +13,14 @@ public class MySinglyLinkedList {
         this.size = 0;
     }
 
-    // methods here!
     boolean isEmpty(){
         return head==null;
     }
-    // Adds element into last position in the linked list
-    void add(int data){
-        // create a new node with data value
-        Node node=new Node(data);
-        // check if empty
 
-        if(isEmpty()){head=tail=node;
-        }
-        else { // add element to last position
+    void add(int data){
+        Node node=new Node(data);
+        if(isEmpty()){head=tail=node;}
+        else {
             tail.next=node;
             tail=node;
         }
@@ -65,6 +60,7 @@ public class MySinglyLinkedList {
         }
 
     }
+
     public int getKthFromLast(int k){
         Node ptr1=head;
         Node ptr2=head;
@@ -77,7 +73,9 @@ public class MySinglyLinkedList {
         }
         return ptr1.value;
     }
+
     public void removeKthFromLast(int k) {
+        List<Integer> list = new LinkedList<>();
         Node prevDelete = null;
         Node ptr1 = head;
         Node ptr2 = head;

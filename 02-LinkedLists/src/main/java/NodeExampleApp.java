@@ -3,9 +3,11 @@ public class NodeExampleApp {
         MyNode nodeA=new MyNode("Node A");
         MyNode nodeB=new MyNode("Node B");
         MyNode nodeC=new MyNode("Node C");
+        MyNode nodeD=new MyNode("Node D");
         nodeA.next=nodeB;
         nodeB.next=nodeC;
-        System.out.println(nodeA.name + " " + nodeA.next.name + " " + nodeB.next.name);
+        nodeC.next=nodeD;
+//        System.out.println(nodeA.name + " " + nodeA.next.name + " " + nodeB.next.name);
         MyNode current = nodeA;
         while (current!=null){
             System.out.println(current.name);
